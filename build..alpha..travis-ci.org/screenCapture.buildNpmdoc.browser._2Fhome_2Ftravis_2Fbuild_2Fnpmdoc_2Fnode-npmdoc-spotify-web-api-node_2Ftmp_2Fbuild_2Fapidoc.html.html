@@ -1,0 +1,619 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/thelinmichael/spotify-web-api-node">spotify-web-api-node (v2.3.6)</a>
+</h1>
+<h4>A Node.js wrapper for Spotify's Web API</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.spotify-web-api-node">module spotify-web-api-node</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spotify-web-api-node._addMethods">
+            function <span class="apidocSignatureSpan">spotify-web-api-node.</span>_addMethods
+            <span class="apidocSignatureSpan">(methods)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">spotify-web-api-node.</span>authentication_request</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">spotify-web-api-node.</span>base_request</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">spotify-web-api-node.</span>http_manager</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">spotify-web-api-node.</span>server_methods</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">spotify-web-api-node.</span>webapi_request</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.spotify-web-api-node.authentication_request">module spotify-web-api-node.authentication_request</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spotify-web-api-node.authentication_request.builder">
+            function <span class="apidocSignatureSpan">spotify-web-api-node.authentication_request.</span>builder
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.spotify-web-api-node.base_request">module spotify-web-api-node.base_request</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spotify-web-api-node.base_request.builder">
+            function <span class="apidocSignatureSpan">spotify-web-api-node.base_request.</span>builder
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.spotify-web-api-node.http_manager">module spotify-web-api-node.http_manager</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spotify-web-api-node.http_manager._makeRequest">
+            function <span class="apidocSignatureSpan">spotify-web-api-node.http_manager.</span>_makeRequest
+            <span class="apidocSignatureSpan">(method, options, uri, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spotify-web-api-node.http_manager.del">
+            function <span class="apidocSignatureSpan">spotify-web-api-node.http_manager.</span>del
+            <span class="apidocSignatureSpan">(request, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spotify-web-api-node.http_manager.get">
+            function <span class="apidocSignatureSpan">spotify-web-api-node.http_manager.</span>get
+            <span class="apidocSignatureSpan">(request, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spotify-web-api-node.http_manager.post">
+            function <span class="apidocSignatureSpan">spotify-web-api-node.http_manager.</span>post
+            <span class="apidocSignatureSpan">(request, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spotify-web-api-node.http_manager.put">
+            function <span class="apidocSignatureSpan">spotify-web-api-node.http_manager.</span>put
+            <span class="apidocSignatureSpan">(request, callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.spotify-web-api-node.server_methods">module spotify-web-api-node.server_methods</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spotify-web-api-node.server_methods.authorizationCodeGrant">
+            function <span class="apidocSignatureSpan">spotify-web-api-node.server_methods.</span>authorizationCodeGrant
+            <span class="apidocSignatureSpan">(code, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spotify-web-api-node.server_methods.clientCredentialsGrant">
+            function <span class="apidocSignatureSpan">spotify-web-api-node.server_methods.</span>clientCredentialsGrant
+            <span class="apidocSignatureSpan">(options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spotify-web-api-node.server_methods.refreshAccessToken">
+            function <span class="apidocSignatureSpan">spotify-web-api-node.server_methods.</span>refreshAccessToken
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.spotify-web-api-node.webapi_request">module spotify-web-api-node.webapi_request</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.spotify-web-api-node.webapi_request.builder">
+            function <span class="apidocSignatureSpan">spotify-web-api-node.webapi_request.</span>builder
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.spotify-web-api-node" id="apidoc.module.spotify-web-api-node">module spotify-web-api-node</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.spotify-web-api-node._addMethods" id="apidoc.element.spotify-web-api-node._addMethods">
+        function <span class="apidocSignatureSpan">spotify-web-api-node.</span>_addMethods
+        <span class="apidocSignatureSpan">(methods)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_addMethods = function (methods) {
+  for (var i in methods) {
+    if (methods.hasOwnProperty(i)) {
+      this.prototype[i] = methods[i];
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.spotify-web-api-node.authentication_request" id="apidoc.module.spotify-web-api-node.authentication_request">module spotify-web-api-node.authentication_request</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.spotify-web-api-node.authentication_request.builder" id="apidoc.element.spotify-web-api-node.authentication_request.builder">
+        function <span class="apidocSignatureSpan">spotify-web-api-node.authentication_request.</span>builder
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">builder = function () {
+  return Request.builder()
+      .withHost(DEFAULT_HOST)
+      .withPort(DEFAULT_PORT)
+      .withScheme(DEFAULT_SCHEME);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var Request = require('./base-request');
+
+var DEFAULT_HOST = 'accounts.spotify.com',
+    DEFAULT_PORT = 443,
+    DEFAULT_SCHEME = 'https';
+
+module.exports.builder = function() {
+  return Request.<span class="apidocCodeKeywordSpan">builder</span>()
+      .withHost(DEFAULT_HOST)
+      .withPort(DEFAULT_PORT)
+      .withScheme(DEFAULT_SCHEME);
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.spotify-web-api-node.base_request" id="apidoc.module.spotify-web-api-node.base_request">module spotify-web-api-node.base_request</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.spotify-web-api-node.base_request.builder" id="apidoc.element.spotify-web-api-node.base_request.builder">
+        function <span class="apidocSignatureSpan">spotify-web-api-node.base_request.</span>builder
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">builder = function () {
+  return new Builder();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var Request = require('./base-request');
+
+var DEFAULT_HOST = 'accounts.spotify.com',
+    DEFAULT_PORT = 443,
+    DEFAULT_SCHEME = 'https';
+
+module.exports.builder = function() {
+  return Request.<span class="apidocCodeKeywordSpan">builder</span>()
+      .withHost(DEFAULT_HOST)
+      .withPort(DEFAULT_PORT)
+      .withScheme(DEFAULT_SCHEME);
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.spotify-web-api-node.http_manager" id="apidoc.module.spotify-web-api-node.http_manager">module spotify-web-api-node.http_manager</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.spotify-web-api-node.http_manager._makeRequest" id="apidoc.element.spotify-web-api-node.http_manager._makeRequest">
+        function <span class="apidocSignatureSpan">spotify-web-api-node.http_manager.</span>_makeRequest
+        <span class="apidocSignatureSpan">(method, options, uri, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_makeRequest = function (method, options, uri, callback) {
+  var req = method(uri);
+
+  if (options.query) {
+    req.query(options.query);
+  }
+
+  if (options.data &amp;&amp; (!options.headers || options.headers['Content-Type'] !== 'application/json')) {
+    req.type('form');
+    req.send(options.data);
+  } else if (options.data) {
+    req.send(options.data);
+  }
+
+  if (options.headers) {
+    req.set(options.headers);
+  }
+
+  req.end(function (err, response) {
+    if (err) {
+      var errorObject = _getErrorObject('Request error', {
+        error: err
+      });
+      return callback(errorObject);
+    }
+
+    return callback(null, {
+      body: response.body,
+      headers: response.headers,
+      statusCode: response.statusCode
+    });
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @param {BaseRequest} The request.
+* @param {Function} The callback function.
+*/
+HttpManager.get = function(request, callback) {
+ var options = _getParametersFromRequest(request);
+ var method = superagent.get;
+
+ HttpManager.<span class="apidocCodeKeywordSpan">_makeRequest</span>(method, options, request.getURI(), callback);
+};
+
+/**
+* Make a HTTP POST request.
+* @param {BaseRequest} The request.
+* @param {Function} The callback function.
+*/
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.spotify-web-api-node.http_manager.del" id="apidoc.element.spotify-web-api-node.http_manager.del">
+        function <span class="apidocSignatureSpan">spotify-web-api-node.http_manager.</span>del
+        <span class="apidocSignatureSpan">(request, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">del = function (request, callback) {
+
+  var options = _getParametersFromRequest(request);
+  var method = superagent.del;
+
+  HttpManager._makeRequest(method, options, request.getURI(), callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.spotify-web-api-node.http_manager.get" id="apidoc.element.spotify-web-api-node.http_manager.get">
+        function <span class="apidocSignatureSpan">spotify-web-api-node.http_manager.</span>get
+        <span class="apidocSignatureSpan">(request, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (request, callback) {
+  var options = _getParametersFromRequest(request);
+  var method = superagent.get;
+
+  HttpManager._makeRequest(method, options, request.getURI(), callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.spotify-web-api-node.http_manager.post" id="apidoc.element.spotify-web-api-node.http_manager.post">
+        function <span class="apidocSignatureSpan">spotify-web-api-node.http_manager.</span>post
+        <span class="apidocSignatureSpan">(request, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">post = function (request, callback) {
+
+  var options = _getParametersFromRequest(request);
+  var method = superagent.post;
+
+  HttpManager._makeRequest(method, options, request.getURI(), callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.spotify-web-api-node.http_manager.put" id="apidoc.element.spotify-web-api-node.http_manager.put">
+        function <span class="apidocSignatureSpan">spotify-web-api-node.http_manager.</span>put
+        <span class="apidocSignatureSpan">(request, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">put = function (request, callback) {
+
+  var options = _getParametersFromRequest(request);
+  var method = superagent.put;
+
+  HttpManager._makeRequest(method, options, request.getURI(), callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.spotify-web-api-node.server_methods" id="apidoc.module.spotify-web-api-node.server_methods">module spotify-web-api-node.server_methods</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.spotify-web-api-node.server_methods.authorizationCodeGrant" id="apidoc.element.spotify-web-api-node.server_methods.authorizationCodeGrant">
+        function <span class="apidocSignatureSpan">spotify-web-api-node.server_methods.</span>authorizationCodeGrant
+        <span class="apidocSignatureSpan">(code, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">authorizationCodeGrant = function (code, callback) {
+  var request = AuthenticationRequest.builder()
+    .withPath('/api/token')
+    .withBodyParameters({
+      'grant_type' : 'authorization_code',
+      'redirect_uri' : this.getRedirectURI(),
+      'code' : code,
+      'client_id' : this.getClientId(),
+      'client_secret' : this.getClientSecret()
+    })
+    .build();
+
+  var promise = this._performRequest(HttpManager.post, request);
+
+  if (callback) {
+    promise.then(function(data) {
+      callback(null, data);
+    }, function(err) {
+      callback(err);
+    });
+  } else {
+    return promise;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.spotify-web-api-node.server_methods.clientCredentialsGrant" id="apidoc.element.spotify-web-api-node.server_methods.clientCredentialsGrant">
+        function <span class="apidocSignatureSpan">spotify-web-api-node.server_methods.</span>clientCredentialsGrant
+        <span class="apidocSignatureSpan">(options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clientCredentialsGrant = function (options, callback) {
+  var request = AuthenticationRequest.builder()
+    .withPath('/api/token')
+    .withBodyParameters({
+      'grant_type' : 'client_credentials'
+    })
+    .withHeaders({
+      Authorization : ('Basic ' + new Buffer(this.getClientId() + ':' + this.getClientSecret()).toString('base64'))
+    })
+    .build();
+
+  this._addBodyParameters(request, options);
+
+  var promise =  this._performRequest(HttpManager.post, request);
+
+  if (callback) {
+    promise.then(function(data) {
+      callback(null, data);
+    }, function(err) {
+      callback(err);
+    });
+  } else {
+    return promise;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.spotify-web-api-node.server_methods.refreshAccessToken" id="apidoc.element.spotify-web-api-node.server_methods.refreshAccessToken">
+        function <span class="apidocSignatureSpan">spotify-web-api-node.server_methods.</span>refreshAccessToken
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">refreshAccessToken = function (callback) {
+  var request = AuthenticationRequest.builder()
+    .withPath('/api/token')
+    .withBodyParameters({
+      'grant_type' : 'refresh_token',
+      'refresh_token' : this.getRefreshToken()
+    })
+    .withHeaders({
+      Authorization : ('Basic ' + new Buffer(this.getClientId() + ':' + this.getClientSecret()).toString('base64'))
+    })
+    .build();
+
+  var promise = this._performRequest(HttpManager.post, request);
+
+  if (callback) {
+    promise.then(function(data) {
+      callback(null, data);
+    }, function(err) {
+      callback(err);
+    });
+  } else {
+    return promise;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.spotify-web-api-node.webapi_request" id="apidoc.module.spotify-web-api-node.webapi_request">module spotify-web-api-node.webapi_request</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.spotify-web-api-node.webapi_request.builder" id="apidoc.element.spotify-web-api-node.webapi_request.builder">
+        function <span class="apidocSignatureSpan">spotify-web-api-node.webapi_request.</span>builder
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">builder = function () {
+  return Request.builder()
+      .withHost(DEFAULT_HOST)
+      .withPort(DEFAULT_PORT)
+      .withScheme(DEFAULT_SCHEME);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var Request = require('./base-request');
+
+var DEFAULT_HOST = 'accounts.spotify.com',
+    DEFAULT_PORT = 443,
+    DEFAULT_SCHEME = 'https';
+
+module.exports.builder = function() {
+  return Request.<span class="apidocCodeKeywordSpan">builder</span>()
+      .withHost(DEFAULT_HOST)
+      .withPort(DEFAULT_PORT)
+      .withScheme(DEFAULT_SCHEME);
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>

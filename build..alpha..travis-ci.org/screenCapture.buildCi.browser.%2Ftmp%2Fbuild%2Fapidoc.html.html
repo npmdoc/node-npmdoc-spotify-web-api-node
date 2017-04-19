@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/thelinmichael/spotify-web-api-node"
-
-    >spotify-web-api-node (v2.3.6)</a>
+    <a href="https://github.com/thelinmichael/spotify-web-api-node">spotify-web-api-node (v2.3.6)</a>
 </h1>
 <h4>A Node.js wrapper for Spotify's Web API</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.spotify-web-api-node">module spotify-web-api-node</a><ol>
 
@@ -1131,11 +1124,11 @@
       .withScheme(DEFAULT_SCHEME);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-var Request = require(&#x27;./base-request&#x27;);
+var Request = require('./base-request');
 
-var DEFAULT_HOST = &#x27;accounts.spotify.com&#x27;,
+var DEFAULT_HOST = 'accounts.spotify.com',
     DEFAULT_PORT = 443,
-    DEFAULT_SCHEME = &#x27;https&#x27;;
+    DEFAULT_SCHEME = 'https';
 
 module.exports.builder = function() {
   return Request.<span class="apidocCodeKeywordSpan">builder</span>()
@@ -1164,11 +1157,11 @@ module.exports.builder = function() {
   return new Builder();
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-var Request = require(&#x27;./base-request&#x27;);
+var Request = require('./base-request');
 
-var DEFAULT_HOST = &#x27;accounts.spotify.com&#x27;,
+var DEFAULT_HOST = 'accounts.spotify.com',
     DEFAULT_PORT = 443,
-    DEFAULT_SCHEME = &#x27;https&#x27;;
+    DEFAULT_SCHEME = 'https';
 
 module.exports.builder = function() {
   return Request.<span class="apidocCodeKeywordSpan">builder</span>()
@@ -1235,7 +1228,7 @@ module.exports.builder = function() {
     <li>description and source-code<pre class="apidocCodePre">_addAccessToken = function (request, accessToken) {
   if (accessToken) {
     request.addHeaders({
-      &#x27;Authorization&#x27; : &#x27;Bearer &#x27; + accessToken
+      'Authorization' : 'Bearer ' + accessToken
     });
   }
 }</pre></li>
@@ -1254,18 +1247,18 @@ module.exports.builder = function() {
     <li>description and source-code<pre class="apidocCodePre">_addBodyParameters = function (request, options) {
   if (options) {
     for (var key in options) {
-      if (key !== &#x27;credentials&#x27;) {
+      if (key !== 'credentials') {
         request.addBodyParameter(key, options[key]);
       }
     }
   }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-    &#x27;grant_type&#x27; : &#x27;client_credentials&#x27;
+    'grant_type' : 'client_credentials'
   })
   .withHeaders({
-    Authorization : (&#x27;Basic &#x27; + new Buffer(this.getClientId() + &#x27;:&#x27; + this.getClientSecret()).toString(&#x27
-;base64&#x27;))
+    Authorization : ('Basic ' + new Buffer(this.getClientId() + ':' + this.getClientSecret()).toString('
+;base64'))
   })
   .build();
 
@@ -1294,7 +1287,7 @@ if (callback) {
     return;
   }
   for (var key in options) {
-    if (key !== &#x27;credentials&#x27;) {
+    if (key !== 'credentials') {
       request.addQueryParameter(key, options[key]);
     }
   }
@@ -1344,8 +1337,8 @@ if (callback) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
   .withHeaders({
-    Authorization : (&#x27;Basic &#x27; + new Buffer(this.getClientId() + &#x27;:&#x27; + this.getClientSecret()).toString(&#x27
-;base64&#x27;))
+    Authorization : ('Basic ' + new Buffer(this.getClientId() + ':' + this.getClientSecret()).toString('
+;base64'))
   })
   .build();
 
@@ -1408,8 +1401,8 @@ if (callback) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">addToMySavedAlbums = function (albumIds, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/me/albums&#x27;)
-    .withHeaders({ &#x27;Content-Type&#x27; : &#x27;application/json&#x27; })
+    .withPath('/v1/me/albums')
+    .withHeaders({ 'Content-Type' : 'application/json' })
     .withBodyParameters(albumIds)
     .build();
 
@@ -1441,8 +1434,8 @@ if (callback) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">addToMySavedTracks = function (trackIds, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/me/tracks&#x27;)
-    .withHeaders({ &#x27;Content-Type&#x27; : &#x27;application/json&#x27; })
+    .withPath('/v1/me/tracks')
+    .withHeaders({ 'Content-Type' : 'application/json' })
     .withBodyParameters(trackIds)
     .build();
 
@@ -1474,14 +1467,14 @@ if (callback) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">addTracksToPlaylist = function (userId, playlistId, tracks, options, callback) {
   var tracksString;
-  if (typeof tracks === &#x27;object&#x27;) {
+  if (typeof tracks === 'object') {
     tracksString = tracks.join();
   } else {
     tracksString = tracks;
   }
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/users/&#x27; + encodeURIComponent(userId) + &#x27;/playlists/&#x27; + playlistId + &#x27;/tracks&#x27;)
-    .withHeaders({ &#x27;Content-Type&#x27; : &#x27;application/json&#x27; })
+    .withPath('/v1/users/' + encodeURIComponent(userId) + '/playlists/' + playlistId + '/tracks')
+    .withHeaders({ 'Content-Type' : 'application/json' })
     .withQueryParameters({
       uris: tracksString
     })
@@ -1516,9 +1509,9 @@ if (callback) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">areFollowingPlaylist = function (userId, playlistId, followerIds, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/users/&#x27; + encodeURIComponent(userId) + &#x27;/playlists/&#x27; + playlistId + &#x27;/followers/contains&#x27;)
+    .withPath('/v1/users/' + encodeURIComponent(userId) + '/playlists/' + playlistId + '/followers/contains')
     .withQueryParameters({
-      ids : followerIds.join(&#x27;,&#x27;)
+      ids : followerIds.join(',')
     })
     .build();
 
@@ -1550,13 +1543,13 @@ if (callback) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">authorizationCodeGrant = function (code, callback) {
   var request = AuthenticationRequest.builder()
-    .withPath(&#x27;/api/token&#x27;)
+    .withPath('/api/token')
     .withBodyParameters({
-      &#x27;grant_type&#x27; : &#x27;authorization_code&#x27;,
-      &#x27;redirect_uri&#x27; : this.getRedirectURI(),
-      &#x27;code&#x27; : code,
-      &#x27;client_id&#x27; : this.getClientId(),
-      &#x27;client_secret&#x27; : this.getClientSecret()
+      'grant_type' : 'authorization_code',
+      'redirect_uri' : this.getRedirectURI(),
+      'code' : code,
+      'client_id' : this.getClientId(),
+      'client_secret' : this.getClientSecret()
     })
     .build();
 
@@ -1586,8 +1579,8 @@ if (callback) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">changePlaylistDetails = function (userId, playlistId, options, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/users/&#x27; + encodeURIComponent(userId) + &#x27;/playlists/&#x27; + playlistId)
-    .withHeaders({ &#x27;Content-Type&#x27; : &#x27;application/json&#x27; })
+    .withPath('/v1/users/' + encodeURIComponent(userId) + '/playlists/' + playlistId)
+    .withHeaders({ 'Content-Type' : 'application/json' })
     .withBodyParameters(options)
     .build();
 
@@ -1619,12 +1612,12 @@ if (callback) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">clientCredentialsGrant = function (options, callback) {
   var request = AuthenticationRequest.builder()
-    .withPath(&#x27;/api/token&#x27;)
+    .withPath('/api/token')
     .withBodyParameters({
-      &#x27;grant_type&#x27; : &#x27;client_credentials&#x27;
+      'grant_type' : 'client_credentials'
     })
     .withHeaders({
-      Authorization : (&#x27;Basic &#x27; + new Buffer(this.getClientId() + &#x27;:&#x27; + this.getClientSecret()).toString(&#x27;base64&#x27;))
+      Authorization : ('Basic ' + new Buffer(this.getClientId() + ':' + this.getClientSecret()).toString('base64'))
     })
     .build();
 
@@ -1656,9 +1649,9 @@ if (callback) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">containsMySavedAlbums = function (albumIds, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/me/albums/contains&#x27;)
+    .withPath('/v1/me/albums/contains')
     .withQueryParameters({
-      &#x27;ids&#x27; : albumIds.join(&#x27;,&#x27;)
+      'ids' : albumIds.join(',')
     })
     .build();
 
@@ -1690,9 +1683,9 @@ if (callback) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">containsMySavedTracks = function (trackIds, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/me/tracks/contains&#x27;)
+    .withPath('/v1/me/tracks/contains')
     .withQueryParameters({
-      &#x27;ids&#x27; : trackIds.join(&#x27;,&#x27;)
+      'ids' : trackIds.join(',')
     })
     .build();
 
@@ -1724,13 +1717,13 @@ if (callback) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">createAuthorizeURL = function (scopes, state) {
   var request = AuthenticationRequest.builder()
-    .withPath(&#x27;/authorize&#x27;)
+    .withPath('/authorize')
     .withQueryParameters({
-      &#x27;client_id&#x27; : this.getClientId(),
-      &#x27;response_type&#x27; : &#x27;code&#x27;,
-      &#x27;redirect_uri&#x27; : this.getRedirectURI(),
-      &#x27;scope&#x27; : scopes.join(&#x27;%20&#x27;),
-      &#x27;state&#x27; : state
+      'client_id' : this.getClientId(),
+      'response_type' : 'code',
+      'redirect_uri' : this.getRedirectURI(),
+      'scope' : scopes.join('%20'),
+      'state' : state
     })
     .build();
 
@@ -1751,22 +1744,22 @@ if (callback) {
     <li>description and source-code<pre class="apidocCodePre">createPlaylist = function (userId, playlistName, options, callback) {
   // In case someone is using a version where options parameter did not exist.
   var actualCallback;
-  if (typeof options === &#x27;function&#x27;) {
+  if (typeof options === 'function') {
     actualCallback = options;
   } else {
     actualCallback = callback;
   }
 
-  var actualOptions = { &#x27;name&#x27; : playlistName };
-  if (typeof options === &#x27;object&#x27;) {
+  var actualOptions = { 'name' : playlistName };
+  if (typeof options === 'object') {
     Object.keys(options).forEach(function(key) {
       actualOptions[key] = options[key];
     });
   }
 
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/users/&#x27; + encodeURIComponent(userId) + &#x27;/playlists&#x27;)
-    .withHeaders({ &#x27;Content-Type&#x27; : &#x27;application/json&#x27; })
+    .withPath('/v1/users/' + encodeURIComponent(userId) + '/playlists')
+    .withHeaders({ 'Content-Type' : 'application/json' })
     .withBodyParameters(actualOptions)
     .build();
 
@@ -1798,10 +1791,10 @@ if (callback) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">followArtists = function (artistIds, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/me/following&#x27;)
+    .withPath('/v1/me/following')
     .withQueryParameters({
-      ids: artistIds.join(&#x27;,&#x27;),
-      type: &#x27;artist&#x27;
+      ids: artistIds.join(','),
+      type: 'artist'
     })
     .build();
 
@@ -1833,9 +1826,9 @@ if (callback) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">followPlaylist = function (userId, playlistId, options, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/users/&#x27; + encodeURIComponent(userId) + &#x27;/playlists/&#x27; + playlistId + &#x27;/followers&#x27;)
+    .withPath('/v1/users/' + encodeURIComponent(userId) + '/playlists/' + playlistId + '/followers')
     .withBodyParameters(options)
-    .withHeaders({ &#x27;Content-Type&#x27; : &#x27;application/json&#x27; })
+    .withHeaders({ 'Content-Type' : 'application/json' })
     .build();
 
   this._addAccessToken(request, this.getAccessToken());
@@ -1866,10 +1859,10 @@ if (callback) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">followUsers = function (userIds, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/me/following&#x27;)
+    .withPath('/v1/me/following')
     .withQueryParameters({
-      ids: userIds.join(&#x27;,&#x27;),
-      type: &#x27;user&#x27;
+      ids: userIds.join(','),
+      type: 'user'
     })
     .build();
 
@@ -1900,7 +1893,7 @@ if (callback) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getAccessToken = function () {
-  return this._getCredential(&#x27;accessToken&#x27;);
+  return this._getCredential('accessToken');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1917,21 +1910,21 @@ if (callback) {
     <li>description and source-code<pre class="apidocCodePre">getAlbum = function (albumId, options, callback) {
   // In case someone is using a version where options parameter did not exist.
   var actualCallback;
-  if (typeof options === &#x27;function&#x27;) {
+  if (typeof options === 'function') {
     actualCallback = options;
   } else {
     actualCallback = callback;
   }
 
   var actualOptions = {};
-  if (typeof options === &#x27;object&#x27;) {
+  if (typeof options === 'object') {
     Object.keys(options).forEach(function(key) {
       actualOptions[key] = options[key];
     });
   }
 
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/albums/&#x27; + albumId)
+    .withPath('/v1/albums/' + albumId)
     .withQueryParameters(actualOptions)
     .build();
 
@@ -1963,7 +1956,7 @@ if (callback) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getAlbumTracks = function (albumId, options, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/albums/&#x27; + albumId + &#x27;/tracks&#x27;)
+    .withPath('/v1/albums/' + albumId + '/tracks')
     .build();
 
   this._addAccessToken(request, this.getAccessToken());
@@ -1996,23 +1989,23 @@ if (callback) {
     <li>description and source-code<pre class="apidocCodePre">getAlbums = function (albumIds, options, callback) {
   // In case someone is using a version where options parameter did not exist.
   var actualCallback;
-  if (typeof options === &#x27;function&#x27;) {
+  if (typeof options === 'function') {
     actualCallback = options;
   } else {
     actualCallback = callback;
   }
 
   var actualOptions = {};
-  if (typeof options === &#x27;object&#x27;) {
+  if (typeof options === 'object') {
     Object.keys(options).forEach(function(key) {
       actualOptions[key] = options[key];
     });
   }
 
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/albums&#x27;)
+    .withPath('/v1/albums')
     .withQueryParameters({
-      &#x27;ids&#x27; : albumIds.join(&#x27;,&#x27;)
+      'ids' : albumIds.join(',')
     })
     .build();
 
@@ -2045,7 +2038,7 @@ if (callback) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getArtist = function (artistId, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/artists/&#x27; + artistId)
+    .withPath('/v1/artists/' + artistId)
     .build();
 
   this._addAccessToken(request, this.getAccessToken());
@@ -2076,7 +2069,7 @@ if (callback) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getArtistAlbums = function (artistId, options, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/artists/&#x27; + artistId + &#x27;/albums&#x27;)
+    .withPath('/v1/artists/' + artistId + '/albums')
     .build();
 
   this._addAccessToken(request, this.getAccessToken());
@@ -2108,7 +2101,7 @@ if (callback) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getArtistRelatedArtists = function (artistId, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/artists/&#x27; + artistId + &#x27;/related-artists&#x27;)
+    .withPath('/v1/artists/' + artistId + '/related-artists')
     .build();
 
   this._addAccessToken(request, this.getAccessToken());
@@ -2139,9 +2132,9 @@ if (callback) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getArtistTopTracks = function (artistId, country, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/artists/&#x27; + artistId + &#x27;/top-tracks&#x27;)
+    .withPath('/v1/artists/' + artistId + '/top-tracks')
     .withQueryParameters({
-      &#x27;country&#x27; : country
+      'country' : country
     })
     .build();
 
@@ -2173,9 +2166,9 @@ if (callback) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getArtists = function (artistIds, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/artists&#x27;)
+    .withPath('/v1/artists')
     .withQueryParameters({
-      &#x27;ids&#x27; : artistIds.join(&#x27;,&#x27;)
+      'ids' : artistIds.join(',')
     })
     .build();
 
@@ -2207,7 +2200,7 @@ if (callback) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getAudioAnalysisForTrack = function (trackId, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/audio-analysis/&#x27; + trackId)
+    .withPath('/v1/audio-analysis/' + trackId)
     .build();
 
   this._addAccessToken(request, this.getAccessToken());
@@ -2238,7 +2231,7 @@ if (callback) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getAudioFeaturesForTrack = function (trackId, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/audio-features/&#x27; + trackId)
+    .withPath('/v1/audio-features/' + trackId)
     .build();
 
   this._addAccessToken(request, this.getAccessToken());
@@ -2269,9 +2262,9 @@ if (callback) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getAudioFeaturesForTracks = function (trackIds, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/audio-features&#x27;)
+    .withPath('/v1/audio-features')
     .withQueryParameters({
-      &#x27;ids&#x27; : trackIds.join(&#x27;,&#x27;)
+      'ids' : trackIds.join(',')
     })
     .build();
 
@@ -2303,7 +2296,7 @@ if (callback) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getAvailableGenreSeeds = function (callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/recommendations/available-genre-seeds&#x27;)
+    .withPath('/v1/recommendations/available-genre-seeds')
     .build();
 
   this._addAccessToken(request, this.getAccessToken());
@@ -2334,7 +2327,7 @@ if (callback) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getCategories = function (options, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/browse/categories&#x27;)
+    .withPath('/v1/browse/categories')
     .withQueryParameters(options)
     .build();
 
@@ -2366,7 +2359,7 @@ if (callback) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getCategory = function (categoryId, options, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/browse/categories/&#x27; + categoryId)
+    .withPath('/v1/browse/categories/' + categoryId)
     .withQueryParameters(options)
     .build();
 
@@ -2397,18 +2390,18 @@ if (callback) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getClientId = function () {
-  return this._getCredential(&#x27;clientId&#x27;);
+  return this._getCredential('clientId');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
   clientCredentialsGrant: function(options, callback) {
 var request = AuthenticationRequest.builder()
-  .withPath(&#x27;/api/token&#x27;)
+  .withPath('/api/token')
   .withBodyParameters({
-    &#x27;grant_type&#x27; : &#x27;client_credentials&#x27;
+    'grant_type' : 'client_credentials'
   })
   .withHeaders({
-    Authorization : (&#x27;Basic &#x27; + new Buffer(this.<span class="apidocCodeKeywordSpan">getClientId</span>() + &#x27;:&#x27
-; + this.getClientSecret()).toString(&#x27;base64&#x27;))
+    Authorization : ('Basic ' + new Buffer(this.<span class="apidocCodeKeywordSpan">getClientId</span>() + ':'
+; + this.getClientSecret()).toString('base64'))
   })
   .build();
 
@@ -2428,18 +2421,18 @@ var promise =  this._performRequest(HttpManager.post, request);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getClientSecret = function () {
-  return this._getCredential(&#x27;clientSecret&#x27;);
+  return this._getCredential('clientSecret');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
   clientCredentialsGrant: function(options, callback) {
 var request = AuthenticationRequest.builder()
-  .withPath(&#x27;/api/token&#x27;)
+  .withPath('/api/token')
   .withBodyParameters({
-    &#x27;grant_type&#x27; : &#x27;client_credentials&#x27;
+    'grant_type' : 'client_credentials'
   })
   .withHeaders({
-    Authorization : (&#x27;Basic &#x27; + new Buffer(this.getClientId() + &#x27;:&#x27; + this.<span class="apidocCodeKeywordSpan
-">getClientSecret</span>()).toString(&#x27;base64&#x27;))
+    Authorization : ('Basic ' + new Buffer(this.getClientId() + ':' + this.<span class="apidocCodeKeywordSpan
+">getClientSecret</span>()).toString('base64'))
   })
   .build();
 
@@ -2475,8 +2468,8 @@ var promise =  this._performRequest(HttpManager.post, request);
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getFeaturedPlaylists = function (options, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/browse/featured-playlists&#x27;)
-    .withHeaders({ &#x27;Content-Type&#x27; : &#x27;application/json&#x27; })
+    .withPath('/v1/browse/featured-playlists')
+    .withHeaders({ 'Content-Type' : 'application/json' })
     .withQueryParameters(options)
     .build();
 
@@ -2508,10 +2501,10 @@ var promise =  this._performRequest(HttpManager.post, request);
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getFollowedArtists = function (options, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/me/following&#x27;)
-    .withHeaders({ &#x27;Content-Type&#x27; : &#x27;application/json&#x27; })
+    .withPath('/v1/me/following')
+    .withHeaders({ 'Content-Type' : 'application/json' })
     .withQueryParameters({
-      type : &#x27;artist&#x27;
+      type : 'artist'
     })
     .build();
 
@@ -2544,7 +2537,7 @@ var promise =  this._performRequest(HttpManager.post, request);
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getMe = function (callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/me&#x27;)
+    .withPath('/v1/me')
     .build();
 
   this._addAccessToken(request, this.getAccessToken());
@@ -2575,7 +2568,7 @@ var promise =  this._performRequest(HttpManager.post, request);
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getMySavedAlbums = function (options, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/me/albums&#x27;)
+    .withPath('/v1/me/albums')
     .withQueryParameters(options)
     .build();
 
@@ -2607,7 +2600,7 @@ var promise =  this._performRequest(HttpManager.post, request);
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getMySavedTracks = function (options, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/me/tracks&#x27;)
+    .withPath('/v1/me/tracks')
     .withQueryParameters(options)
     .build();
 
@@ -2639,7 +2632,7 @@ var promise =  this._performRequest(HttpManager.post, request);
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getMyTopArtists = function (options, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/me/top/artists&#x27;)
+    .withPath('/v1/me/top/artists')
     .build();
 
   this._addAccessToken(request, this.getAccessToken());
@@ -2671,7 +2664,7 @@ var promise =  this._performRequest(HttpManager.post, request);
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getMyTopTracks = function (options, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/me/top/tracks&#x27;)
+    .withPath('/v1/me/top/tracks')
     .build();
 
   this._addAccessToken(request, this.getAccessToken());
@@ -2703,8 +2696,8 @@ var promise =  this._performRequest(HttpManager.post, request);
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getNewReleases = function (options, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/browse/new-releases&#x27;)
-    .withHeaders({ &#x27;Content-Type&#x27; : &#x27;application/json&#x27; })
+    .withPath('/v1/browse/new-releases')
+    .withHeaders({ 'Content-Type' : 'application/json' })
     .withQueryParameters(options)
     .build();
 
@@ -2736,7 +2729,7 @@ var promise =  this._performRequest(HttpManager.post, request);
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getPlaylist = function (userId, playlistId, options, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/users/&#x27; + encodeURIComponent(userId) + &#x27;/playlists/&#x27; + playlistId)
+    .withPath('/v1/users/' + encodeURIComponent(userId) + '/playlists/' + playlistId)
     .build();
 
   this._addAccessToken(request, this.getAccessToken());
@@ -2768,7 +2761,7 @@ var promise =  this._performRequest(HttpManager.post, request);
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getPlaylistTracks = function (userId, playlistId, options, callback) {
   var request = WebApiRequest.builder().
-    withPath(&#x27;/v1/users/&#x27; + encodeURIComponent(userId) + &#x27;/playlists/&#x27; + playlistId + &#x27;/tracks&#x27;).
+    withPath('/v1/users/' + encodeURIComponent(userId) + '/playlists/' + playlistId + '/tracks').
     withQueryParameters(options).
     build();
 
@@ -2800,7 +2793,7 @@ var promise =  this._performRequest(HttpManager.post, request);
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getPlaylistsForCategory = function (categoryId, options, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/browse/categories/&#x27; + categoryId + &#x27;/playlists&#x27;)
+    .withPath('/v1/browse/categories/' + categoryId + '/playlists')
     .withQueryParameters(options)
     .build();
 
@@ -2832,16 +2825,16 @@ var promise =  this._performRequest(HttpManager.post, request);
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getRecommendations = function (options, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/recommendations&#x27;)
+    .withPath('/v1/recommendations')
     .build();
 
   var _opts = {};
-  var optionsOfTypeArray = [&#x27;seed_artists&#x27;, &#x27;seed_genres&#x27;, &#x27;seed_tracks&#x27;];
+  var optionsOfTypeArray = ['seed_artists', 'seed_genres', 'seed_tracks'];
   for (var option in options) {
     if (options.hasOwnProperty(option)) {
-      if (optionsOfTypeArray.indexOf(option) !== -1 &#x26;&#x26;
-        Object.prototype.toString.call(options[option]) === &#x27;[object Array]&#x27;) {
-        _opts[option] = options[option].join(&#x27;,&#x27;);
+      if (optionsOfTypeArray.indexOf(option) !== -1 &amp;&amp;
+        Object.prototype.toString.call(options[option]) === '[object Array]') {
+        _opts[option] = options[option].join(',');
       } else {
         _opts[option] = options[option];
       }
@@ -2876,20 +2869,20 @@ var promise =  this._performRequest(HttpManager.post, request);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getRedirectURI = function () {
-  return this._getCredential(&#x27;redirectUri&#x27;);
+  return this._getCredential('redirectUri');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
    *          Not returned if a callback is given.
    */
   authorizationCodeGrant: function(code, callback) {
 var request = AuthenticationRequest.builder()
-  .withPath(&#x27;/api/token&#x27;)
+  .withPath('/api/token')
   .withBodyParameters({
-    &#x27;grant_type&#x27; : &#x27;authorization_code&#x27;,
-    &#x27;redirect_uri&#x27; : this.<span class="apidocCodeKeywordSpan">getRedirectURI</span>(),
-    &#x27;code&#x27; : code,
-    &#x27;client_id&#x27; : this.getClientId(),
-    &#x27;client_secret&#x27; : this.getClientSecret()
+    'grant_type' : 'authorization_code',
+    'redirect_uri' : this.<span class="apidocCodeKeywordSpan">getRedirectURI</span>(),
+    'code' : code,
+    'client_id' : this.getClientId(),
+    'client_secret' : this.getClientSecret()
   })
   .build();
 
@@ -2907,21 +2900,21 @@ var promise = this._performRequest(HttpManager.post, request);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getRefreshToken = function () {
-  return this._getCredential(&#x27;refreshToken&#x27;);
+  return this._getCredential('refreshToken');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
    *          Not returned if a callback is given.
    */
   refreshAccessToken: function(callback) {
 var request = AuthenticationRequest.builder()
-  .withPath(&#x27;/api/token&#x27;)
+  .withPath('/api/token')
   .withBodyParameters({
-    &#x27;grant_type&#x27; : &#x27;refresh_token&#x27;,
-    &#x27;refresh_token&#x27; : this.<span class="apidocCodeKeywordSpan">getRefreshToken</span>()
+    'grant_type' : 'refresh_token',
+    'refresh_token' : this.<span class="apidocCodeKeywordSpan">getRefreshToken</span>()
   })
   .withHeaders({
-    Authorization : (&#x27;Basic &#x27; + new Buffer(this.getClientId() + &#x27;:&#x27; + this.getClientSecret()).toString(&#x27
-;base64&#x27;))
+    Authorization : ('Basic ' + new Buffer(this.getClientId() + ':' + this.getClientSecret()).toString('
+;base64'))
   })
   .build();
 
@@ -2941,21 +2934,21 @@ var promise = this._performRequest(HttpManager.post, request);
     <li>description and source-code<pre class="apidocCodePre">getTrack = function (trackId, options, callback) {
    // In case someone is using a version where options parameter did not exist.
   var actualCallback;
-  if (typeof options === &#x27;function&#x27;) {
+  if (typeof options === 'function') {
     actualCallback = options;
   } else {
     actualCallback = callback;
   }
 
   var actualOptions = {};
-  if (typeof options === &#x27;object&#x27;) {
+  if (typeof options === 'object') {
     Object.keys(options).forEach(function(key) {
       actualOptions[key] = options[key];
     });
   }
 
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/tracks/&#x27; + trackId)
+    .withPath('/v1/tracks/' + trackId)
     .withQueryParameters(actualOptions)
     .build();
 
@@ -2988,23 +2981,23 @@ var promise = this._performRequest(HttpManager.post, request);
     <li>description and source-code<pre class="apidocCodePre">getTracks = function (trackIds, options, callback) {
   // In case someone is using a version where options parameter did not exist.
   var actualCallback;
-  if (typeof options === &#x27;function&#x27;) {
+  if (typeof options === 'function') {
     actualCallback = options;
   } else {
     actualCallback = callback;
   }
 
   var actualOptions = {};
-  if (typeof options === &#x27;object&#x27;) {
+  if (typeof options === 'object') {
     Object.keys(options).forEach(function(key) {
       actualOptions[key] = options[key];
     });
   }
 
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/tracks&#x27;)
+    .withPath('/v1/tracks')
     .withQueryParameters({
-      &#x27;ids&#x27; : trackIds.join(&#x27;,&#x27;)
+      'ids' : trackIds.join(',')
     })
     .build();
 
@@ -3037,7 +3030,7 @@ var promise = this._performRequest(HttpManager.post, request);
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getUser = function (userId, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/users/&#x27; + encodeURIComponent(userId))
+    .withPath('/v1/users/' + encodeURIComponent(userId))
     .build();
 
   this._addAccessToken(request, this.getAccessToken());
@@ -3068,10 +3061,10 @@ var promise = this._performRequest(HttpManager.post, request);
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getUserPlaylists = function (userId, options, callback) {
   var path;
-  if (typeof userId === &#x27;string&#x27;) {
-    path = &#x27;/v1/users/&#x27; + encodeURIComponent(userId) + &#x27;/playlists&#x27;;
+  if (typeof userId === 'string') {
+    path = '/v1/users/' + encodeURIComponent(userId) + '/playlists';
   } else {
-    path = &#x27;/v1/me/playlists&#x27;;
+    path = '/v1/me/playlists';
   }
 
   var request = WebApiRequest.builder()
@@ -3107,10 +3100,10 @@ var promise = this._performRequest(HttpManager.post, request);
     <ul>
     <li>description and source-code<pre class="apidocCodePre">isFollowingArtists = function (artistIds, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/me/following/contains&#x27;)
+    .withPath('/v1/me/following/contains')
     .withQueryParameters({
-      ids: artistIds.join(&#x27;,&#x27;),
-      type: &#x27;artist&#x27;
+      ids: artistIds.join(','),
+      type: 'artist'
     })
     .build();
 
@@ -3142,10 +3135,10 @@ var promise = this._performRequest(HttpManager.post, request);
     <ul>
     <li>description and source-code<pre class="apidocCodePre">isFollowingUsers = function (userIds, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/me/following/contains&#x27;)
+    .withPath('/v1/me/following/contains')
     .withQueryParameters({
-      ids: userIds.join(&#x27;,&#x27;),
-      type: &#x27;user&#x27;
+      ids: userIds.join(','),
+      type: 'user'
     })
     .build();
 
@@ -3177,13 +3170,13 @@ var promise = this._performRequest(HttpManager.post, request);
     <ul>
     <li>description and source-code<pre class="apidocCodePre">refreshAccessToken = function (callback) {
   var request = AuthenticationRequest.builder()
-    .withPath(&#x27;/api/token&#x27;)
+    .withPath('/api/token')
     .withBodyParameters({
-      &#x27;grant_type&#x27; : &#x27;refresh_token&#x27;,
-      &#x27;refresh_token&#x27; : this.getRefreshToken()
+      'grant_type' : 'refresh_token',
+      'refresh_token' : this.getRefreshToken()
     })
     .withHeaders({
-      Authorization : (&#x27;Basic &#x27; + new Buffer(this.getClientId() + &#x27;:&#x27; + this.getClientSecret()).toString(&#x27;base64&#x27;))
+      Authorization : ('Basic ' + new Buffer(this.getClientId() + ':' + this.getClientSecret()).toString('base64'))
     })
     .build();
 
@@ -3213,8 +3206,8 @@ var promise = this._performRequest(HttpManager.post, request);
     <ul>
     <li>description and source-code<pre class="apidocCodePre">removeFromMySavedAlbums = function (albumIds, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/me/albums&#x27;)
-    .withHeaders({ &#x27;Content-Type&#x27; : &#x27;application/json&#x27; })
+    .withPath('/v1/me/albums')
+    .withHeaders({ 'Content-Type' : 'application/json' })
     .withBodyParameters(albumIds)
     .build();
 
@@ -3246,8 +3239,8 @@ var promise = this._performRequest(HttpManager.post, request);
     <ul>
     <li>description and source-code<pre class="apidocCodePre">removeFromMySavedTracks = function (trackIds, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/me/tracks&#x27;)
-    .withHeaders({ &#x27;Content-Type&#x27; : &#x27;application/json&#x27; })
+    .withPath('/v1/me/tracks')
+    .withHeaders({ 'Content-Type' : 'application/json' })
     .withBodyParameters(trackIds)
     .build();
 
@@ -3279,10 +3272,10 @@ var promise = this._performRequest(HttpManager.post, request);
     <ul>
     <li>description and source-code<pre class="apidocCodePre">removeTracksFromPlaylist = function (userId, playlistId, tracks, options, callback) {
   var request = WebApiRequest.builder().
-    withPath(&#x27;/v1/users/&#x27; + encodeURIComponent(userId) + &#x27;/playlists/&#x27; + playlistId + &#x27;/tracks&#x27;).
-    withHeaders({ &#x27;Content-Type&#x27; : &#x27;application/json&#x27; }).
+    withPath('/v1/users/' + encodeURIComponent(userId) + '/playlists/' + playlistId + '/tracks').
+    withHeaders({ 'Content-Type' : 'application/json' }).
     withBodyParameters({
-      &#x27;tracks&#x27;: tracks
+      'tracks': tracks
     }).
     build();
 
@@ -3315,11 +3308,11 @@ var promise = this._performRequest(HttpManager.post, request);
     <ul>
     <li>description and source-code<pre class="apidocCodePre">removeTracksFromPlaylistByPosition = function (userId, playlistId, positions, snapshotId, callback) {
   var request = WebApiRequest.builder().
-    withPath(&#x27;/v1/users/&#x27; + encodeURIComponent(userId) + &#x27;/playlists/&#x27; + playlistId + &#x27;/tracks&#x27;).
-    withHeaders({ &#x27;Content-Type&#x27; : &#x27;application/json&#x27; }).
+    withPath('/v1/users/' + encodeURIComponent(userId) + '/playlists/' + playlistId + '/tracks').
+    withHeaders({ 'Content-Type' : 'application/json' }).
     withBodyParameters({
-      &#x27;positions&#x27;: positions,
-      &#x27;snapshot_id&#x27; : snapshotId
+      'positions': positions,
+      'snapshot_id' : snapshotId
     }).
     build();
 
@@ -3351,11 +3344,11 @@ var promise = this._performRequest(HttpManager.post, request);
     <ul>
     <li>description and source-code<pre class="apidocCodePre">reorderTracksInPlaylist = function (userId, playlistId, rangeStart, insertBefore, options, callback) {
   var request = WebApiRequest.builder().
-    withPath(&#x27;/v1/users/&#x27; + encodeURIComponent(userId) + &#x27;/playlists/&#x27; + playlistId + &#x27;/tracks&#x27;).
-    withHeaders({ &#x27;Content-Type&#x27; : &#x27;application/json&#x27; }).
+    withPath('/v1/users/' + encodeURIComponent(userId) + '/playlists/' + playlistId + '/tracks').
+    withHeaders({ 'Content-Type' : 'application/json' }).
     withBodyParameters({
-      &#x27;range_start&#x27;: rangeStart,
-      &#x27;insert_before&#x27; : insertBefore
+      'range_start': rangeStart,
+      'insert_before' : insertBefore
     }).
     build();
 
@@ -3388,10 +3381,10 @@ var promise = this._performRequest(HttpManager.post, request);
     <ul>
     <li>description and source-code<pre class="apidocCodePre">replaceTracksInPlaylist = function (userId, playlistId, uris, callback) {
   var request = WebApiRequest.builder().
-    withPath(&#x27;/v1/users/&#x27; + encodeURIComponent(userId) + &#x27;/playlists/&#x27; + playlistId + &#x27;/tracks&#x27;).
-    withHeaders({ &#x27;Content-Type&#x27; : &#x27;application/json&#x27; }).
+    withPath('/v1/users/' + encodeURIComponent(userId) + '/playlists/' + playlistId + '/tracks').
+    withHeaders({ 'Content-Type' : 'application/json' }).
     withBodyParameters({
-      &#x27;uris&#x27;: uris
+      'uris': uris
     }).
     build();
 
@@ -3422,7 +3415,7 @@ var promise = this._performRequest(HttpManager.post, request);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">resetAccessToken = function () {
-  this._resetCredential(&#x27;accessToken&#x27;);
+  this._resetCredential('accessToken');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -3437,7 +3430,7 @@ var promise = this._performRequest(HttpManager.post, request);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">resetClientId = function () {
-  this._resetCredential(&#x27;clientId&#x27;);
+  this._resetCredential('clientId');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -3452,7 +3445,7 @@ var promise = this._performRequest(HttpManager.post, request);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">resetClientSecret = function () {
-  this._resetCredential(&#x27;clientSecret&#x27;);
+  this._resetCredential('clientSecret');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -3482,7 +3475,7 @@ var promise = this._performRequest(HttpManager.post, request);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">resetRedirectURI = function () {
-  this._resetCredential(&#x27;redirectUri&#x27;);
+  this._resetCredential('redirectUri');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -3497,7 +3490,7 @@ var promise = this._performRequest(HttpManager.post, request);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">resetRefreshToken = function () {
-  this._resetCredential(&#x27;refreshToken&#x27;);
+  this._resetCredential('refreshToken');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -3513,9 +3506,9 @@ var promise = this._performRequest(HttpManager.post, request);
     <ul>
     <li>description and source-code<pre class="apidocCodePre">search = function (query, types, options, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/search/&#x27;)
+    .withPath('/v1/search/')
     .withQueryParameters({
-      type : types.join(&#x27;,&#x27;),
+      type : types.join(','),
       q : query
     })
     .build();
@@ -3548,7 +3541,7 @@ var promise = this._performRequest(HttpManager.post, request);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">searchAlbums = function (query, options, callback) {
-  return this.search(query, [&#x27;album&#x27;], options, callback);
+  return this.search(query, ['album'], options, callback);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -3563,7 +3556,7 @@ var promise = this._performRequest(HttpManager.post, request);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">searchArtists = function (query, options, callback) {
-  return this.search(query, [&#x27;artist&#x27;], options, callback);
+  return this.search(query, ['artist'], options, callback);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -3578,7 +3571,7 @@ var promise = this._performRequest(HttpManager.post, request);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">searchPlaylists = function (query, options, callback) {
-  return this.search(query, [&#x27;playlist&#x27;], options, callback);
+  return this.search(query, ['playlist'], options, callback);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -3593,7 +3586,7 @@ var promise = this._performRequest(HttpManager.post, request);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">searchTracks = function (query, options, callback) {
-  return this.search(query, [&#x27;track&#x27;], options, callback);
+  return this.search(query, ['track'], options, callback);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -3608,7 +3601,7 @@ var promise = this._performRequest(HttpManager.post, request);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">setAccessToken = function (accessToken) {
-  this._setCredential(&#x27;accessToken&#x27;, accessToken);
+  this._setCredential('accessToken', accessToken);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -3623,7 +3616,7 @@ var promise = this._performRequest(HttpManager.post, request);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">setClientId = function (clientId) {
-  this._setCredential(&#x27;clientId&#x27;, clientId);
+  this._setCredential('clientId', clientId);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -3638,7 +3631,7 @@ var promise = this._performRequest(HttpManager.post, request);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">setClientSecret = function (clientSecret) {
-  this._setCredential(&#x27;clientSecret&#x27;, clientSecret);
+  this._setCredential('clientSecret', clientSecret);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -3672,7 +3665,7 @@ var promise = this._performRequest(HttpManager.post, request);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">setRedirectURI = function (redirectUri) {
-  this._setCredential(&#x27;redirectUri&#x27;, redirectUri);
+  this._setCredential('redirectUri', redirectUri);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -3687,7 +3680,7 @@ var promise = this._performRequest(HttpManager.post, request);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">setRefreshToken = function (refreshToken) {
-  this._setCredential(&#x27;refreshToken&#x27;, refreshToken);
+  this._setCredential('refreshToken', refreshToken);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -3703,10 +3696,10 @@ var promise = this._performRequest(HttpManager.post, request);
     <ul>
     <li>description and source-code<pre class="apidocCodePre">unfollowArtists = function (artistIds, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/me/following&#x27;)
+    .withPath('/v1/me/following')
     .withQueryParameters({
-      ids: artistIds.join(&#x27;,&#x27;),
-      type: &#x27;artist&#x27;
+      ids: artistIds.join(','),
+      type: 'artist'
     })
     .build();
 
@@ -3738,8 +3731,8 @@ var promise = this._performRequest(HttpManager.post, request);
     <ul>
     <li>description and source-code<pre class="apidocCodePre">unfollowPlaylist = function (userId, playlistId, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/users/&#x27; + encodeURIComponent(userId) + &#x27;/playlists/&#x27; + playlistId + &#x27;/followers&#x27;)
-    .withHeaders({ &#x27;Content-Type&#x27; : &#x27;application/json&#x27; })
+    .withPath('/v1/users/' + encodeURIComponent(userId) + '/playlists/' + playlistId + '/followers')
+    .withHeaders({ 'Content-Type' : 'application/json' })
     .build();
 
   this._addAccessToken(request, this.getAccessToken());
@@ -3770,10 +3763,10 @@ var promise = this._performRequest(HttpManager.post, request);
     <ul>
     <li>description and source-code<pre class="apidocCodePre">unfollowUsers = function (userIds, callback) {
   var request = WebApiRequest.builder()
-    .withPath(&#x27;/v1/me/following&#x27;)
+    .withPath('/v1/me/following')
     .withQueryParameters({
-      ids: userIds.join(&#x27;,&#x27;),
-      type: &#x27;user&#x27;
+      ids: userIds.join(','),
+      type: 'user'
     })
     .build();
 
@@ -3815,8 +3808,8 @@ var promise = this._performRequest(HttpManager.post, request);
     req.query(options.query);
   }
 
-  if (options.data &#x26;&#x26; (!options.headers || options.headers[&#x27;Content-Type&#x27;] !== &#x27;application/json&#x27;)) {
-    req.type(&#x27;form&#x27;);
+  if (options.data &amp;&amp; (!options.headers || options.headers['Content-Type'] !== 'application/json')) {
+    req.type('form');
     req.send(options.data);
   } else if (options.data) {
     req.send(options.data);
@@ -3828,7 +3821,7 @@ var promise = this._performRequest(HttpManager.post, request);
 
   req.end(function (err, response) {
     if (err) {
-      var errorObject = _getErrorObject(&#x27;Request error&#x27;, {
+      var errorObject = _getErrorObject('Request error', {
         error: err
       });
       return callback(errorObject);
@@ -3951,13 +3944,13 @@ HttpManager.get = function(request, callback) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">authorizationCodeGrant = function (code, callback) {
   var request = AuthenticationRequest.builder()
-    .withPath(&#x27;/api/token&#x27;)
+    .withPath('/api/token')
     .withBodyParameters({
-      &#x27;grant_type&#x27; : &#x27;authorization_code&#x27;,
-      &#x27;redirect_uri&#x27; : this.getRedirectURI(),
-      &#x27;code&#x27; : code,
-      &#x27;client_id&#x27; : this.getClientId(),
-      &#x27;client_secret&#x27; : this.getClientSecret()
+      'grant_type' : 'authorization_code',
+      'redirect_uri' : this.getRedirectURI(),
+      'code' : code,
+      'client_id' : this.getClientId(),
+      'client_secret' : this.getClientSecret()
     })
     .build();
 
@@ -3987,12 +3980,12 @@ HttpManager.get = function(request, callback) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">clientCredentialsGrant = function (options, callback) {
   var request = AuthenticationRequest.builder()
-    .withPath(&#x27;/api/token&#x27;)
+    .withPath('/api/token')
     .withBodyParameters({
-      &#x27;grant_type&#x27; : &#x27;client_credentials&#x27;
+      'grant_type' : 'client_credentials'
     })
     .withHeaders({
-      Authorization : (&#x27;Basic &#x27; + new Buffer(this.getClientId() + &#x27;:&#x27; + this.getClientSecret()).toString(&#x27;base64&#x27;))
+      Authorization : ('Basic ' + new Buffer(this.getClientId() + ':' + this.getClientSecret()).toString('base64'))
     })
     .build();
 
@@ -4024,13 +4017,13 @@ HttpManager.get = function(request, callback) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">refreshAccessToken = function (callback) {
   var request = AuthenticationRequest.builder()
-    .withPath(&#x27;/api/token&#x27;)
+    .withPath('/api/token')
     .withBodyParameters({
-      &#x27;grant_type&#x27; : &#x27;refresh_token&#x27;,
-      &#x27;refresh_token&#x27; : this.getRefreshToken()
+      'grant_type' : 'refresh_token',
+      'refresh_token' : this.getRefreshToken()
     })
     .withHeaders({
-      Authorization : (&#x27;Basic &#x27; + new Buffer(this.getClientId() + &#x27;:&#x27; + this.getClientSecret()).toString(&#x27;base64&#x27;))
+      Authorization : ('Basic ' + new Buffer(this.getClientId() + ':' + this.getClientSecret()).toString('base64'))
     })
     .build();
 
@@ -4070,11 +4063,11 @@ HttpManager.get = function(request, callback) {
       .withScheme(DEFAULT_SCHEME);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-var Request = require(&#x27;./base-request&#x27;);
+var Request = require('./base-request');
 
-var DEFAULT_HOST = &#x27;accounts.spotify.com&#x27;,
+var DEFAULT_HOST = 'accounts.spotify.com',
     DEFAULT_PORT = 443,
-    DEFAULT_SCHEME = &#x27;https&#x27;;
+    DEFAULT_SCHEME = 'https';
 
 module.exports.builder = function() {
   return Request.<span class="apidocCodeKeywordSpan">builder</span>()
@@ -4094,3 +4087,4 @@ module.exports.builder = function() {
     ]
 </div>
 </div>
+</body></html>
